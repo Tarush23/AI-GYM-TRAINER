@@ -1,24 +1,31 @@
 import streamlit as st
 
+
 def initial_session_defaults():
     defaults = {
+
+        # Workout progress
         "reps": 0,
-        "target_sets": 0,
-        "reps_per_set": 0,
         "sets_completed": 0,
         "current_set_reps": 0,
         "workout_complete": False,
+
+        # Actual running workout config
+        "exercise": None,
+        "target_sets": 0,
+        "reps_per_set": 0,
+        "workout_started": False,
+
+        # Sidebar widget values
+        "plan_sets": 0,
+        "plan_reps": 0,
+
+        # Notifications / tracking
         "last_notified_sets_completed": 0,
         "last_notified_workout_complete": False,
         "last_saved_sets_completed": 0,
         "set_cycle_started_at": 0.0,
         "last_exercise_type": "Squats",
-
-        # Workout plan (set before starting)
-        "workout_started": False,
-        "plan_exercise": "",
-        "plan_sets": 0,
-        "plan_reps": 0,
 
         # Common Angles
         "knee_angle": 0,
@@ -38,6 +45,6 @@ def initial_session_defaults():
         "balance_status": "N/A",
     }
 
-    for key,value in defaults.items():
+    for key, value in defaults.items():
         if key not in st.session_state:
-            st.session_state[key]=value
+            st.session_state[key] = value

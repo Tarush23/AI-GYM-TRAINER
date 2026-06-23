@@ -3,179 +3,261 @@
 ========================================================= */
 
 .stApp {
-  background-color: #0A0D14;
-  color: #fff;
+    background-color: #0A0D14;
+    color: white;
 }
 
 [data-testid="stSidebar"] {
-  background-color: #111520;
+    background-color: #111520;
 }
 
+[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+
 /* =========================================================
-   TYPOGRAPHY (SCOPED – safer)
+   TYPOGRAPHY
 ========================================================= */
 
 .block-container,
 .block-container * {
-  font-family: 'AdobeClean', sans-serif !important;
+    font-family: 'AdobeClean', sans-serif !important;
 }
+
 
 /* =========================================================
    LAYOUT
 ========================================================= */
 
 .block-container {
-  padding: 50px 3rem !important;
-  max-width: 750px !important;
+    padding-top: 50px !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+
+    max-width: 750px !important;
 }
 
 /* =========================================================
    BUTTONS
 ========================================================= */
 
-button,
-.stButton button,
-.stDownloadButton button,
-.MuiBox-root button {
-  background-color: #181D2A !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 0 !important;
-  font-family: 'AdobeClean', sans-serif !important;
+div.stButton > button,
+[data-testid="stBaseButton-secondary"],
+[data-testid="stBaseButton-primary"] {
+
+    width: 100% !important;
+
+    background: #181D2A !important;
+
+    color: white !important;
+
+    border: 1px solid rgba(255,255,255,.08) !important;
+
+    border-radius: 0 !important;
+
+    min-height: 48px !important;
+
+    box-shadow: none !important;
+
+    font-family: 'AdobeClean', sans-serif !important;
+}
+
+
+/* Hover */
+
+div.stButton > button:hover,
+[data-testid="stBaseButton-secondary"]:hover,
+[data-testid="stBaseButton-primary"]:hover {
+
+    background: #222836 !important;
+
+    color: white !important;
+}
+
+
+/* Active */
+
+div.stButton > button:active {
+
+    background: #2A3142 !important;
+}
+
+
+/* Disabled */
+
+div.stButton > button:disabled {
+
+    background: #181D2A !important;
+
+    color: rgba(255,255,255,.5) !important;
+
+    opacity: 1 !important;
 }
 
 /* =========================================================
-   INPUTS & TEXT ELEMENTS
+   TEXT INPUT
 ========================================================= */
 
-input,
-textarea,
-p,
-li,
-code,
-[data-testid="stSelectbox"] > div > div,
-[data-baseweb="select"] > div,
-[data-baseweb="popover"] ul,
-[data-baseweb="menu"] {
-  border-radius: 0 !important;
-  font-family: 'AdobeClean', sans-serif !important;
+[data-testid="stTextInput"] input,
+textarea {
+
+    background-color: #181D2A !important;
+
+    color: white !important;
+
+    border: 1px solid rgba(255,255,255,.08) !important;
+
+    border-radius: 0 !important;
 }
+
+
+/* =========================================================
+   NUMBER INPUT
+========================================================= */
+
+[data-testid="stNumberInput"] input {
+
+    background-color: #181D2A !important;
+
+    color: white !important;
+
+    border-radius: 0 !important;
+}
+
+[data-testid="stNumberInput"] button {
+
+    background-color: #181D2A !important;
+
+    color: white !important;
+
+    border-radius: 0 !important;
+}
+
+
+/* =========================================================
+   SELECTBOX
+========================================================= */
+
+[data-baseweb="select"] {
+
+    background-color: #181D2A !important;
+
+    border-radius: 0 !important;
+}
+
+[data-baseweb="select"] > div {
+
+    background-color: #181D2A !important;
+
+    color: white !important;
+
+    border: 1px solid rgba(255,255,255,.08) !important;
+
+    border-radius: 0 !important;
+}
+
+[data-baseweb="popover"] {
+
+    background-color: #181D2A !important;
+}
+
+[data-baseweb="menu"] {
+
+    background-color: #181D2A !important;
+
+    color: white !important;
+}
+
 
 /* =========================================================
    METRICS
 ========================================================= */
 
 [data-testid="stMetric"] {
-  background-color: #181D2A;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1rem 1.2rem;
-  border-radius: 0;
-}
 
-[data-testid="stMetric"] div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    background-color: #181D2A;
 
-[data-testid="stMetricValue"] {
-  font-size: 1.5rem !important;
-  font-weight: 400 !important;
+    border: 1px solid rgba(255,255,255,.08);
+
+    padding: 1rem;
+
+    border-radius: 0;
 }
 
 [data-testid="stMetricLabel"] {
-  font-size: 15px !important;
-  opacity: 0.6;
+
+    opacity: .6;
 }
 
-[data-testid="stMetric"] div label p {
-  font-size: 16px !important;
+[data-testid="stMetricValue"] {
+
+    font-size: 1.5rem !important;
+
+    font-weight: 400 !important;
 }
+
 
 /* =========================================================
-   CONTAINERS / CARDS
+   CONTAINERS
 ========================================================= */
 
 .stContainer,
+.stForm,
 .stExpander,
 .stTabs,
-.stColumns,
-.stPopover,
-.stAlertContainer,
-.stStatusContainer,
-.stMetric,
-.stTable,
-.stDataFrame,
-.stForm,
-.stSelectbox,
-[data-baseweb="select"] > div,
-[data-testid="stForm"],
-[data-testid="stMetric"],
-[data-testid="stNumberInputContainer"],
-[data-testid="stDataFrameColumnMenu"],
-[data-testid="stHeadingWithActionElements"],
-[data-testid="stCaptionContainer"] p,
-[data-testid="stAlertContentInfo"] p,
-[data-testid="stSidebarNavLink"],
-[data-testid="stMarkdownContainer"] h3,
-[data-baseweb="popover"],
-[data-baseweb="menu"],
-div[role="menu"],
-div[role="menuitem"] {
-  border-radius: 0 !important;
-  font-family: 'AdobeClean', sans-serif !important;
+.stPopover {
+
+    background-color: #181D2A;
+
+    border-radius: 0 !important;
 }
 
+
 /* =========================================================
-   DATAFRAME FIX
+   TABLES
 ========================================================= */
 
 .stDataFrame,
-.stDataFrame div,
-.stDataFrameGlideDataEditor {
-  border-radius: 0 !important;
-  font-family: 'AdobeClean', sans-serif !important;
+.stDataFrame div {
+
+    border-radius: 0 !important;
+
+    font-family: 'AdobeClean', sans-serif !important;
 }
 
+
 /* =========================================================
-   INTERACTIVE ELEMENTS
+   ALERTS
 ========================================================= */
 
-.stTextInput,
-.stTextArea,
-.stNumberInput,
-.stSlider,
-.stMultiselect,
-.stRadio,
-.stCheckbox,
-.stToggle,
-.stFileUploader,
-.stColorPicker,
-.stDateInput,
-.stTimeInput,
-.stCameraInput,
-[data-testid="stTextInput"] > div,
-[data-testid="stButton"] button,
-[data-testid="stBaseButton-secondaryFormSubmit"],
-[data-testid="stStatusWidget"] {
-  border-radius: 0 !important;
-  font-family: 'AdobeClean', sans-serif !important;
+.stAlert {
+
+    background-color: #181D2A !important;
+
+    border-radius: 0 !important;
 }
 
+
 /* =========================================================
-   MARKDOWN
+   HEADINGS
 ========================================================= */
 
-[data-testid="stMarkdownContainer"] strong {
-  font-family: 'AdobeClean', sans-serif !important;
+h1,
+h2,
+h3,
+h4,
+h5 {
+
+    font-weight: 500 !important;
 }
 
+
 /* =========================================================
-   FORM
+   DIVIDER
 ========================================================= */
 
-.stForm {
-  margin-top: 2rem !important;
-  padding: 1.5rem 1rem !important;
-  background-color: #181D2A !important;
-  color: #fff;
+hr {
+
+    border-color: rgba(255,255,255,.08) !important;
 }
